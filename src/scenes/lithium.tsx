@@ -62,5 +62,5 @@ export default makeScene2D(function* (view) {
     yield* code().code.replace(lines(2, 3), "", 0.2)
     yield* beginSlide("remove field")
     yield* code().code.replace(lines(7, 11), lithiumColumns, 0.4)
-    yield* beginSlide("end")
+    yield* beginSlide("columns")
 });
