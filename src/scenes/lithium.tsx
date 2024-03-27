@@ -53,11 +53,19 @@ const enemyState = `\
 `
 
 const enemyLayout = `\
-CU.Row(CU.Seq(
+CU.Column(CU.Seq(
         DefaultInspector(),
         infoToggle,
         CU.Switch(visible, Info, () => CU.Box())
     ));\
+`
+
+const styling = `.WithStyle(new (color: Color.red))`
+
+const staticStyle = `\
+private static Style style = new(
+    color: Color.red
+);\
 `
 
 export default makeScene2D(function* (view) {
@@ -90,4 +98,23 @@ export default makeScene2D(function* (view) {
         code().code.replace(word(2, 11, 24), enemyLayout, 0.4)
     )
     yield* beginSlide("toggle enemy info")
+    yield* code().selection(lines(2), 0.2)
+    yield* beginSlide("state")
+    yield* code().selection(lines(4,5), 0.2)
+    yield* beginSlide("construction")
+    yield* code().selection(word(5, 18, 30), 0.2)
+    yield* beginSlide("callbacks")
+    yield* code().selection(lines(7, 11), 0.2)
+    yield* beginSlide("return element")
+    yield* all(
+        code().code.insert([11, 6], styling, 0.2),
+        code().selection(word(11, 6, styling.length), 0.2)
+    )
+    yield* beginSlide("styles")
+    yield* all(
+        code().code.replace(word(11, 17, 22), `style`, 0.4),
+        code().code.insert([15, 0], staticStyle, 0.4),
+        code().selection([word(11, 6, 17), lines(15, 17)], 0.4)
+    )
+    yield* beginSlide("shared styles")
 });

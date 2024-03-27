@@ -6,7 +6,7 @@ import img from "../../images/json.png"
 export default makeScene2D(function* (view) {
     view.fill('#242424');
 
-    view.add(<Img src={img}/>);
+    view.add(<Img src={img} scale={2.2}/>);
 
     yield* slideTransition(Origin.Right, 0.2)
 

@@ -1,5 +1,5 @@
 import {makeScene2D, Code, lines, word} from '@motion-canvas/2d';
-import {all, beginSlide, createRef} from '@motion-canvas/core';
+import {all, beginSlide, createRef, Origin, slideTransition} from '@motion-canvas/core';
 import {CSCode} from "../components/Code";
 
 const imGuiSource = `\
@@ -37,6 +37,8 @@ export default makeScene2D(function* (view) {
     const code = createRef<Code>();
 
     view.add(<CSCode ref={code} code={imGuiSource}/>);
+
+    yield* slideTransition(Origin.Right, 0.2)
 
     yield* beginSlide("ImGui Example")
     yield* code().selection(lines(4, 5), 0.2)

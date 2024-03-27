@@ -1,5 +1,6 @@
 import {makePlugin, makeProject} from '@motion-canvas/core';
 
+import blank from "./scenes/blank?scene";
 import imGui from "./scenes/imgui?scene";
 import columns from "./scenes/columns?scene";
 import uiToolkit from "./scenes/uitoolkit?scene";
@@ -8,8 +9,10 @@ import lithium from "./scenes/lithium?scene";
 import json from "./scenes/json?scene";
 import cheats from "./scenes/cheats?scene";
 import debug from "./scenes/debugger?scene";
+import qr from "./scenes/qr?scene"
 
 const scenes = [
+    blank,
     imGui,
     columns,
     uiToolkit,
@@ -17,7 +20,8 @@ const scenes = [
     lithium,
     cheats,
     json,
-    debug
+    debug,
+    qr
 ]
 
 export default makeProject({
