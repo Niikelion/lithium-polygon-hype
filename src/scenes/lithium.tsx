@@ -113,8 +113,8 @@ export default makeScene2D(function* (view) {
     yield* beginSlide("styles")
     yield* all(
         code().code.replace(word(11, 17, 22), `style`, 0.4),
-        code().code.insert([15, 0], staticStyle, 0.4),
-        code().selection([word(11, 6, 17), lines(15, 17)], 0.4)
+        code().code.insert([14, 0], staticStyle, 0.4),
+        code().selection([word(11, 6, 17), lines(14, 16)], 0.4)
     )
     yield* beginSlide("shared styles")
 });
