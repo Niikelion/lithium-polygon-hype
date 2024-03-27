@@ -1,16 +1,6 @@
-import {Code, LezerHighlighter, lines, makeScene2D, withDefaults} from '@motion-canvas/2d';
+import {Code, lines, makeScene2D} from '@motion-canvas/2d';
 import {beginSlide, createRef, Origin, slideTransition} from '@motion-canvas/core';
-import {parser} from "@lezer/javascript";
-
-const csharpConfig = parser.configure({
-    dialect: `csharp`
-})
-
-const CSharpHighlighter = new LezerHighlighter(csharpConfig);
-
-const CSCode = withDefaults(Code, {
-    highlighter: CSharpHighlighter
-})
+import {CSCode} from "../components/Code";
 
 const uiToolkitSource = `\
 public class TickTack : EditorWindow

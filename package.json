@@ -8,14 +8,10 @@
     "build": "tsc && vite build"
   },
   "dependencies": {
-    "@lezer/cpp": "^1.1.2",
     "@lezer/java": "^1.1.1",
-    "@lezer/javascript": "^1.4.13",
-    "@lezer/json": "^1.0.2",
     "@motion-canvas/2d": "^3.15.1",
     "@motion-canvas/core": "^3.15.1",
-    "@motion-canvas/ffmpeg": "^1.1.0",
-    "lezer-csharp-simple": "^0.9.1"
+    "@motion-canvas/ffmpeg": "^1.1.0"
   },
   "devDependencies": {
     "@motion-canvas/ui": "^3.15.1",
